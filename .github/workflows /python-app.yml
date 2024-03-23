@@ -1,4 +1,4 @@
-# Put this file in GitHub: (Repository)/.github/workflow/(File Name).yml
+# Put this file in GitHub: (Repository)/.github/workflows/python-app.yml
 
 # Name of the GitHub Action Workflow
 name: Python Application - GitHub Action Workflow
@@ -6,8 +6,12 @@ name: Python Application - GitHub Action Workflow
 # The run name for workflow runs
 run-name: GitHub Run ID (${{ github.run_id }}) by (@${{ github.actor }})
 
-# Event trigger, in this case push
-on: [push]
+# Event trigger, in this case push/pull to the main branch
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
 
 # Pemissions, contents: read permits an action to list the commits
 permissions:
